@@ -1278,7 +1278,8 @@ actual:\n\
                 None
             } else if (self.config.target.contains("musl") && !aux_props.force_host) ||
                       self.config.target.contains("wasm32") ||
-                      self.config.target.contains("emscripten") {
+                      self.config.target.contains("emscripten") ||
+                      self.config.target.contains("bpf") {
                 // We primarily compile all auxiliary libraries as dynamic libraries
                 // to avoid code size bloat and large binaries as much as possible
                 // for the test suite (otherwise including libstd statically in all
